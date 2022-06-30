@@ -22,6 +22,7 @@ class RegistrarPacienteActivity : AppCompatActivity(),View.OnClickListener {
 
    private lateinit var btnGuardarPR:Button
    private lateinit var btnRegresarPR:Button
+   private lateinit var btnCPaciente: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +41,8 @@ class RegistrarPacienteActivity : AppCompatActivity(),View.OnClickListener {
         btnGuardarPR.setOnClickListener(this)
         btnRegresarPR = findViewById(R.id.btnRegresarPR)
         btnRegresarPR.setOnClickListener(this)
+        btnCPaciente = findViewById(R.id.btnCPaciente)
+        btnCPaciente.setOnClickListener(this)
 
 
 
@@ -68,8 +71,12 @@ class RegistrarPacienteActivity : AppCompatActivity(),View.OnClickListener {
 
 
         }
-        if (v == btnRegresarPR){
+        if (v == btnCPaciente){
             var intent = Intent(this, ConsultarPacienteActivity::class.java)
+            startActivity(intent)
+        }
+        if (v == btnRegresarPR){
+            var intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
     }

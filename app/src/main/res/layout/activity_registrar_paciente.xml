@@ -8,13 +8,12 @@
 
     <LinearLayout
         android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_height="729dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="1dp">
 
         <TextView
-            android:id="@+id/textView30"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nombres:" />
@@ -27,7 +26,6 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Apellidos:" />
@@ -40,7 +38,6 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView38"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="DNI:" />
@@ -53,7 +50,6 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView40"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Edad:" />
@@ -66,7 +62,6 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView41"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sexo:" />
@@ -79,7 +74,6 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView42"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Telefono:" />
@@ -92,7 +86,6 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView44"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Correo:" />
@@ -105,7 +98,6 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView46"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Clave:" />
@@ -123,10 +115,26 @@
             android:layout_height="wrap_content"
             android:text="Guardar" />
 
-        <Button
-            android:id="@+id/btnRegresarPR"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Regresar" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCPaciente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Consultar" />
+
+            <Button
+                android:id="@+id/btnRegresarPR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Regresar" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
