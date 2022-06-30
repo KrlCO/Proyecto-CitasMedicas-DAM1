@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "962267110808",
+    "project_id": "dam1-proyecto-citasmedicas",
+    "storage_bucket": "dam1-proyecto-citasmedicas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962267110808:android:356d94cb2e8080663adfed",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_citasmedicas_dam1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962267110808-q96gghm9mv289emceg4fer0ht0gb8fbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3uB0CuiipxrhaOTNl8kgAyR00QRysTF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962267110808-q96gghm9mv289emceg4fer0ht0gb8fbb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
