@@ -1,5 +1,6 @@
 package com.example.proyecto_citasmedicas_dam1.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,10 @@ class CitaAdapter(val info:ArrayList<Cita>):RecyclerView.Adapter<VistaCita>() {
         holder.tvEspc.text = info.get(position).esp.toString()
         holder.tvMedicoC.text = info.get(position).doctor.toString()
         holder.tvCodPC.text = info.get(position).idpaciente.toString()
+
+        val context: Context = holder.itemView.context
+
+
     }
 
     override fun getItemCount(): Int {

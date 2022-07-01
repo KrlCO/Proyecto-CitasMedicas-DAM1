@@ -4,16 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import com.example.proyecto_citasmedicas_dam1.arreglo.ArregloCita
+import com.example.proyecto_citasmedicas_dam1.arreglo.ArregloEspecialidad
+import com.example.proyecto_citasmedicas_dam1.arreglo.ArregloMedico
 import com.example.proyecto_citasmedicas_dam1.models.Cita
 
 class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
 
-    private lateinit var edtEspCR: EditText
-    private lateinit var edtMedCR: EditText
+    private lateinit var spnEspCR: Spinner
+    private lateinit var spnMedCR: Spinner
     private lateinit var edtPacienteCR: EditText
     private lateinit var edtFechaCR: EditText
     private lateinit var edtHoraCR: EditText
@@ -27,8 +27,8 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_cita)
 
-        edtEspCR = findViewById(R.id.edtEspCR)
-        edtMedCR = findViewById(R.id.edtMedCR)
+        spnEspCR = findViewById(R.id.spnEspCR)
+        spnMedCR = findViewById(R.id.spnMedCR)
         edtPacienteCR = findViewById(R.id.edtPacienteCR)
         edtFechaCR = findViewById(R.id.edtFechaCR)
         edtHoraCR = findViewById(R.id.edtHoraCR)
@@ -40,13 +40,17 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
         btnBackCR.setOnClickListener(this)
         btnCCita = findViewById(R.id.btnCCita)
         btnCCita.setOnClickListener(this)
+
+        muestraEspecialidades()
+        muestraMedicos()
+
     }
 
     override fun onClick(v: View?) {
         if (v == btnSaveCR){
 
-            var esp = edtEspCR.text.toString().toInt()
-            var med = edtMedCR.text.toString().toInt()
+            var esp = spnEspCR.selectedItem.toString().toInt()
+            var med = spnMedCR.selectedItem.toString().toInt()
             var pac = edtPacienteCR.text.toString().toInt()
             var fc = edtFechaCR.toString()
             var hh = edtHoraCR.toString()
@@ -75,4 +79,39 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
          }
 
     }
+
+    fun muestraMedicos(){
+
+        val data = ArregloMedico().lista()
+
+        val medico = ArrayList<String>()
+
+        for(bean in data)
+            medico.add(bean.nombre)
+
+        val adaptador = ArrayAdapter(this, android.R.layout.simple_list_item_1,medico)
+        spnMedCR.adapter = adaptador
+
+
+
+    }
+
+    fun muestraEspecialidades(){
+
+        val data = ArregloEspecialidad().lista()
+
+        val especialidad = ArrayList<String>()
+
+        for(bean in data)
+            especialidad.add(bean.nombre)
+
+        val adaptador = ArrayAdapter(this, android.R.layout.simple_list_item_1,especialidad)
+
+        spnEspCR.adapter = adaptador
+
+
+
+
+    }
+
 }

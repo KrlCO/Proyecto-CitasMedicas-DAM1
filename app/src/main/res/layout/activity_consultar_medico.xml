@@ -13,6 +13,12 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
+        <Button
+            android:id="@+id/btnBackMenuPM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu Principal" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMedico"
             android:layout_width="match_parent"
