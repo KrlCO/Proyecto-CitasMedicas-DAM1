@@ -1,7 +1,6 @@
 package com.example.proyecto_citasmedicas_dam1.arreglo
 
 import android.content.ContentValues
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.example.proyecto_citasmedicas_dam1.models.Paciente
 import com.example.proyecto_citasmedicas_dam1.util.appConfiguration
@@ -11,15 +10,15 @@ class ArregloPaciente {
     fun listado(): ArrayList<Paciente>{
 
         var data = ArrayList<Paciente>()
-        val con: SQLiteDatabase = appConfiguration.BD.readableDatabase
+        var base = appConfiguration.BD.readableDatabase
 
-        val sql = "select * from tb_paciente"
+        var sql = "select * from tb_paciente"
 
-        val rs: Cursor = con.rawQuery(sql, null)
+        var rs = base.rawQuery(sql, null)
 
         while (rs.moveToNext()){
 
-            val bean = Paciente(rs.getInt(0),rs.getString(1), rs.getString(2),rs.getString(3), rs.getInt(4),
+            var bean = Paciente(rs.getInt(0),rs.getString(1), rs.getString(2),rs.getString(3), rs.getInt(4),
                 rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8))
 
             data.add(bean)
@@ -36,7 +35,7 @@ class ArregloPaciente {
         val base:SQLiteDatabase = appConfiguration.BD.writableDatabase
 
         //Create obj class ContentValues
-        val filas = ContentValues()
+        var filas = ContentValues()
 
         //add claves
         filas.put("Nombre", bean.nombre)

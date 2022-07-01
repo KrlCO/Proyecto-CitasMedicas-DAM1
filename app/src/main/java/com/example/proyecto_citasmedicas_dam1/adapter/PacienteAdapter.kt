@@ -15,7 +15,7 @@ import com.example.proyecto_citasmedicas_dam1.models.Paciente
 
 class PacienteAdapter(val info:ArrayList<Paciente>): RecyclerView.Adapter<VistaPaciente>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VistaPaciente {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_paciente, parent, false)
+        var view = LayoutInflater.from(parent.context).inflate(R.layout.item_paciente, parent, false)
         return  VistaPaciente(view)
     }
 
