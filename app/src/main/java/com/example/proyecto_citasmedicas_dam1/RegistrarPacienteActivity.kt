@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import com.example.proyecto_citasmedicas_dam1.arreglo.ArregloPaciente
 import com.example.proyecto_citasmedicas_dam1.models.Paciente
@@ -15,7 +16,7 @@ class RegistrarPacienteActivity : AppCompatActivity(),View.OnClickListener {
    private lateinit var edtApellidosPR:EditText
    private lateinit var edtDniPR:EditText
    private lateinit var edtEdadPR:EditText
-   private lateinit var edtSexoPR:EditText
+   private lateinit var spSexoPR:Spinner
    private lateinit var edtTelefonoPR:EditText
    private lateinit var edtCorreoPR:EditText
    private lateinit var edtPassPR:EditText
@@ -32,7 +33,7 @@ class RegistrarPacienteActivity : AppCompatActivity(),View.OnClickListener {
         edtApellidosPR = findViewById(R.id.edtApellidosPR)
         edtDniPR = findViewById(R.id.edtDniPR)
         edtEdadPR = findViewById(R.id.edtEdadPR)
-        edtSexoPR = findViewById(R.id.edtSexoPR)
+        spSexoPR = findViewById(R.id.spSexoPR)
         edtTelefonoPR = findViewById(R.id.edtTelefonoPR)
         edtCorreoPR = findViewById(R.id.edtCorreoPR)
         edtPassPR = findViewById(R.id.edtPassPR)
@@ -54,7 +55,7 @@ class RegistrarPacienteActivity : AppCompatActivity(),View.OnClickListener {
             var ape = edtApellidosPR.text.toString()
             var dni = edtDniPR.text.toString()
             var edad = edtEdadPR.text.toString().toInt()
-            var sex = edtSexoPR.text.toString()
+            var sex = spSexoPR.selectedItem.toString()
             var tlf = edtTelefonoPR.text.toString()
             var mail = edtCorreoPR.text.toString()
             var pass = edtPassPR.text.toString()

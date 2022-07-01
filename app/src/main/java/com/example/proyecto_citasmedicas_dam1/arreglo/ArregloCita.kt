@@ -1,6 +1,7 @@
 package com.example.proyecto_citasmedicas_dam1.arreglo
 
 import android.content.ContentValues
+import android.database.sqlite.SQLiteDatabase
 import com.example.proyecto_citasmedicas_dam1.models.Cita
 import com.example.proyecto_citasmedicas_dam1.util.appConfiguration
 
@@ -22,7 +23,8 @@ class ArregloCita {
 
     fun adicionar(bean:Cita):Int{
         var salida=-1
-        var base = appConfiguration.BD.writableDatabase
+        val base: SQLiteDatabase = appConfiguration.BD.writableDatabase
+
         var claves = ContentValues()
         claves.put("IdEsp", bean.esp)
         claves.put("IdMedico",bean.doctor)

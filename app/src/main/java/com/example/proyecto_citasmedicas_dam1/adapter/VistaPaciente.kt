@@ -16,14 +16,14 @@ class VistaPaciente(item: View):RecyclerView.ViewHolder(item) {
     var btnDetallesP: Button
 
     init {
-        tvCodP = itemView.findViewById(R.id.tvCodP)
+        tvCodP = itemView.findViewById(R.id.tvCodigoPA)
         tvNombreP = itemView.findViewById((R.id.tvNombreP))
         tvApep = itemView.findViewById(R.id.tvApeP)
 
         tvEdadP = itemView.findViewById(R.id.tvEdadP)
         tvSexP = itemView.findViewById(R.id.tvSexP)
 
-        btnDetallesP = itemView.findViewById(R.id.btnDetallesP)
+        btnDetallesP = itemView.findViewById(R.id.btnRegresarLista)
 
     }
 

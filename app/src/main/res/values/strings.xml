@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Proyecto-CitasMedicas-DAM1</string>
+    <string-array name="sexos">
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </string-array>
 </resources>

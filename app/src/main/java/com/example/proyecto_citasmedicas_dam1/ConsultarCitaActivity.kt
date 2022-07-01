@@ -24,7 +24,7 @@ class ConsultarCitaActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    override fun onClick(p0: View?) {
+    override fun onClick(v: View?) {
         TODO("Not yet implemented")
     }
 }

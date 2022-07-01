@@ -56,11 +56,6 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
 
-        <Button
-            android:id="@+id/btnDetalleC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Detalles" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

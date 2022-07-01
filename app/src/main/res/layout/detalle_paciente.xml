@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegistrarPacienteActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
@@ -16,123 +14,115 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombres:" />
-
-        <EditText
-            android:id="@+id/edtNombrePR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="DETALLES DE PACIENTE" />
 
         <TextView
+            android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Apellidos:" />
-
-        <EditText
-            android:id="@+id/edtApellidosPR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="CODIGO:" />
 
         <TextView
+            android:id="@+id/tvCodPDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOMBRES:" />
+
+        <TextView
+            android:id="@+id/tvNomPDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="APELLIDOS:" />
+
+        <TextView
+            android:id="@+id/tvApePDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView29"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="DNI:" />
 
-        <EditText
-            android:id="@+id/edtDniPR"
+        <TextView
+            android:id="@+id/tvDniPD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="TextView" />
 
         <TextView
+            android:id="@+id/textView31"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Edad:" />
-
-        <EditText
-            android:id="@+id/edtEdadPR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="EDAD:" />
 
         <TextView
+            android:id="@+id/tvEdadPDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sexo:" />
-
-        <Spinner
-            android:id="@+id/spSexoPR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/sexos" />
+            android:text="TextView" />
 
         <TextView
+            android:id="@+id/textView33"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Telefono:" />
-
-        <EditText
-            android:id="@+id/edtTelefonoPR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="SEXO:" />
 
         <TextView
+            android:id="@+id/tvSexoPDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Correo:" />
-
-        <EditText
-            android:id="@+id/edtCorreoPR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="TextView" />
 
         <TextView
+            android:id="@+id/textView35"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Clave:" />
+            android:text="TELEFONO:" />
 
-        <EditText
-            android:id="@+id/edtPassPR"
+        <TextView
+            android:id="@+id/tvFonoPDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="TextView" />
 
-        <Button
-            android:id="@+id/btnGuardarPR"
+        <TextView
+            android:id="@+id/textView37"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar" />
+            android:text="CORREO:" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvCorreoPDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="TextView" />
 
-            <Button
-                android:id="@+id/btnCPaciente"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Consultar" />
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONTRASEÑA:" />
 
-            <Button
-                android:id="@+id/btnRegresarPR"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Regresar" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tvPassPDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
 
     </LinearLayout>
 

@@ -12,7 +12,7 @@ class VistaCita(item: View):RecyclerView.ViewHolder(item) {
     var tvEspc: TextView
     var tvMedicoC: TextView
     var tvCodPC: TextView
-    var btnDetalleC: Button
+
 
     init {
         tvCodC = itemView.findViewById(R.id.tvCodC)
@@ -21,7 +21,7 @@ class VistaCita(item: View):RecyclerView.ViewHolder(item) {
         tvCodPC = itemView.findViewById(R.id.tvCodPC)
 
 
-        btnDetalleC = itemView.findViewById(R.id.btnDetalleC)
+
     }
 
 }

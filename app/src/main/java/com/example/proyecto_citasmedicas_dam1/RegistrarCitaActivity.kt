@@ -47,7 +47,7 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
 
             var esp = edtEspCR.text.toString().toInt()
             var med = edtMedCR.text.toString().toInt()
-            var pac = edtPacienteCR.toString().toInt()
+            var pac = edtPacienteCR.text.toString().toInt()
             var fc = edtFechaCR.toString()
             var hh = edtHoraCR.toString()
             var des = edtDescCR.toString()

@@ -53,4 +53,34 @@ class ArregloPaciente {
         return salida
     }
 
+    fun updatePaciente(bean:Paciente): Int{
+        var salida: Int = -1
+        //Into the BD in mode write
+        val base:SQLiteDatabase = appConfiguration.BD.writableDatabase
+        //Create obj class ContentValues
+        val filas = ContentValues()
+        //add claves
+        filas.put("Nombre", bean.nombre)
+        filas.put("Apellido", bean.apellidos)
+        filas.put("DNI", bean.dni)
+        filas.put("Edad ", bean.edad)
+        filas.put("Sexo", bean.sexo)
+        filas.put("Telefono", bean.tlf)
+        filas.put("Correo", bean.mail)
+        filas.put("Clave", bean.clave)
+        salida=base.update("tb_paciente", filas,"IdPaciente=?", arrayOf(bean.codigo.toString())).toInt()
+
+
+        return salida
+    }
+
+    fun deletePaciente(cod:Int):Int{
+        var salida:Int = -1
+
+        val base:SQLiteDatabase = appConfiguration.BD.writableDatabase
+        salida = base.delete("tb_paciente","IdPaciente=?", arrayOf(cod.toString()))
+
+        return salida
+    }
+
 }
