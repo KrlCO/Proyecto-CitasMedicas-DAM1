@@ -63,16 +63,48 @@ class PacienteActivity : AppCompatActivity(),View.OnClickListener {
             var mail = edtMailPA.text.toString()
             var pass = edtPassPA.text.toString()
 
-            var bean = Paciente(cod,nom,ape,dni,edad,sex,tlf,mail,pass)
+            val r1 = Regex("([a-zA-Z]{3,30}\\s*)+")
+            val r2 = Regex("([a-zA-Z]{3,30}\\s*)+")
+            val r3 = Regex("[0-9]{8}")
+            val r4 = Regex("\\d{2}")
+            val r5 = Regex("[0-9]{9}")
+            val r6 = Regex("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
+            val r8 = Regex("[1-9]")
 
-            var salida = ArregloPaciente().updatePaciente(bean)
+            if (r1.matches(nom)==false){
+                Toast.makeText(this, "El Nombre solo puede tener 3 - 30 letras", Toast.LENGTH_LONG).show()
+                edtNombrePA.requestFocus()
+            }
+            else if (r2.matches(ape) == false){
+                Toast.makeText(this, "Los Apellidos solo puede tener 3 - 30 letras", Toast.LENGTH_LONG).show()
+                edtApellidosPA.requestFocus()
+            }else if (r3.matches(dni) == false){
+                Toast.makeText(this, "El DNI solo puede tener 8 digitos", Toast.LENGTH_LONG).show()
+                edtDNIAc.requestFocus()
+            }
+            else if (r4.matches(edad.toString()) == false){
+                Toast.makeText(this, "La edad solo puede ser de 2 digitos", Toast.LENGTH_LONG).show()
+                edtEdadPA.requestFocus()
+            }else if (r5.matches(tlf) == false){
+                Toast.makeText(this, "El telefono solo puede tener 9 Caracteres", Toast.LENGTH_LONG).show()
+                edtTelefonoPA.requestFocus()
+            }else if (r6.matches(mail) == false){
+                Toast.makeText(this, "El correo solo puede tener 30 Caracteres", Toast.LENGTH_LONG).show()
+                edtMailPA.requestFocus()
+            }
+            else{
+                var bean = Paciente(cod,nom,ape,dni,edad,sex,tlf,mail,pass)
 
-            if (salida > 0)
-                Toast.makeText(this, "Paciente Actualizado", Toast.LENGTH_SHORT).show()
-            else
-                Toast.makeText(this, "Error al Actualizar!", Toast.LENGTH_SHORT).show()
+                var salida = ArregloPaciente().updatePaciente(bean)
+
+                if (salida > 0)
+                    Toast.makeText(this, "Paciente Actualizado", Toast.LENGTH_SHORT).show()
+                else
+                    Toast.makeText(this, "Error al Actualizar!", Toast.LENGTH_SHORT).show()
+            }
 
         }
+
         if (v == btnEliminaPaciente){
 
             var salida = ArregloPaciente().deletePaciente(tvCodigoPA.text.toString().toInt())

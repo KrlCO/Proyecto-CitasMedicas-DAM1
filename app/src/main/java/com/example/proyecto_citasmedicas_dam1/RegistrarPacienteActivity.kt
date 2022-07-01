@@ -60,16 +60,49 @@ class RegistrarPacienteActivity : AppCompatActivity(),View.OnClickListener {
             var mail = edtCorreoPR.text.toString()
             var pass = edtPassPR.text.toString()
 
-            var bean = Paciente(0,nom,ape,dni,edad,sex,tlf,mail,pass)
 
-            var salida = ArregloPaciente().adicionar(bean)
+            val r1 = Regex("([a-zA-Z]{3,30}\\s*)+")
+            val r2 = Regex("([a-zA-Z]{3,30}\\s*)+")
+            val r3 = Regex("[0-9]{8}")
+            val r4 = Regex("\\d{2}")
+            val r5 = Regex("[0-9]{9}")
+            val r6 = Regex("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
+            val r8 = Regex("[1-9]")
 
-            if (salida > 0)
-                Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_SHORT).show()
-            else
-                Toast.makeText(this, "Erro al Registar", Toast.LENGTH_SHORT).show()
+                if (r1.matches(nom)==false){
+                    Toast.makeText(this, "El Nombre solo puede tener 3 - 30 letras", Toast.LENGTH_LONG).show()
+                    edtNombrePR.requestFocus()
+                }
+                else if (r2.matches(ape) == false){
+                    Toast.makeText(this, "Los Apellidos solo puede tener 3 - 30 letras", Toast.LENGTH_LONG).show()
+                    edtApellidosPR.requestFocus()
+                }else if (r3.matches(dni) == false){
+                    Toast.makeText(this, "El DNI solo puede tener 8 digitos", Toast.LENGTH_LONG).show()
+                    edtDniPR.requestFocus()
+                }
+                else if (r4.matches(edad.toString()) == false){
+                    Toast.makeText(this, "La edad solo puede ser de 2 digitos", Toast.LENGTH_LONG).show()
+                    edtEdadPR.requestFocus()
+                }else if (r5.matches(tlf) == false){
+                    Toast.makeText(this, "El telefono solo puede tener 9 Caracteres", Toast.LENGTH_LONG).show()
+                    edtTelefonoPR.requestFocus()
+                }else if (r6.matches(mail) == false){
+                    Toast.makeText(this, "El correo solo puede tener 30 Caracteres", Toast.LENGTH_LONG).show()
+                    edtCorreoPR.requestFocus()
+                }
 
+            else{
 
+                var bean = Paciente(0,nom,ape,dni,edad,sex,tlf,mail,pass)
+
+                var salida = ArregloPaciente().adicionar(bean)
+
+                if (salida > 0)
+                    Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_SHORT).show()
+                else
+                    Toast.makeText(this, "Erro al Registar", Toast.LENGTH_SHORT).show()
+
+            }
 
         }
         if (v == btnCPaciente){

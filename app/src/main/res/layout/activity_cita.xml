@@ -28,11 +28,10 @@
             android:layout_height="wrap_content"
             android:text="Codigo Especialidad:" />
 
-        <TextView
-            android:id="@+id/tvEspC"
+        <Spinner
+            android:id="@+id/spnEspC"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textView32"
@@ -40,11 +39,10 @@
             android:layout_height="wrap_content"
             android:text="Codigo de Medico:" />
 
-        <TextView
-            android:id="@+id/tvMedicoC"
+        <Spinner
+            android:id="@+id/spnMedicoC"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textView6"
@@ -52,11 +50,48 @@
             android:layout_height="wrap_content"
             android:text="Codigo Paciente:" />
 
+        <Spinner
+            android:id="@+id/spnCodPC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <TextView
-            android:id="@+id/tvCodPC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Fecha:" />
+
+        <EditText
+            android:id="@+id/edtFechaPCita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hora:" />
+
+        <EditText
+            android:id="@+id/edtHoraACita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Desripcion:" />
+
+        <EditText
+            android:id="@+id/edtDescACita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
         <LinearLayout
             android:layout_width="match_parent"

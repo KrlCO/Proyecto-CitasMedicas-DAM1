@@ -54,7 +54,7 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
     override fun onClick(v: View?) {
         if (v == btnSaveCR){
 
-           
+
             var pac = edtPacienteCR.text.toString().toInt()
             var fc = edtFechaCR.toString()
             var hh = edtHoraCR.toString()
@@ -64,14 +64,29 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
             //Get Id from Medico selected
             var idMed = datam.get(spnMedCR.selectedItemPosition).cod
 
-            var bean = Cita(0, codEsp,idMed,pac,fc,hh,des)
 
-            var salida = ArregloCita().adicionar(bean)
+                val r1 = Regex("[a-zA-Z][0-9][0-9][0-9][0-9]{3,30}")
+                val r2 = Regex("[a-zA-Z]{3,30}")
+                val r3 = Regex("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")
+                val r4 = Regex("[1-9]")
 
-            if (salida > 0)
-                Toast.makeText(this,"Cita Generada", Toast.LENGTH_SHORT).show()
-            else
-                Toast.makeText(this,"Error al Crear", Toast.LENGTH_SHORT).show()
+                if (r1.matches(des)==false){
+                    Toast.makeText(this, "La Descripcion: Minimo 3 - Maximo 30 Letras", Toast.LENGTH_LONG).show()
+                    edtDescCR.requestFocus()
+                }
+                else{
+
+                    var bean = Cita(0, codEsp,idMed,pac,fc,hh,des)
+
+                    var salida = ArregloCita().adicionar(bean)
+
+
+                    if (salida > 0)
+                        Toast.makeText(this,"Cita Generada", Toast.LENGTH_SHORT).show()
+                    else
+                        Toast.makeText(this,"Error al Crear", Toast.LENGTH_SHORT).show()
+
+                }
 
         }
          if (v == btnCCita) {
