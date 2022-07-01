@@ -9,6 +9,8 @@ import com.example.proyecto_citasmedicas_dam1.arreglo.ArregloCita
 import com.example.proyecto_citasmedicas_dam1.arreglo.ArregloEspecialidad
 import com.example.proyecto_citasmedicas_dam1.arreglo.ArregloMedico
 import com.example.proyecto_citasmedicas_dam1.models.Cita
+import com.example.proyecto_citasmedicas_dam1.models.Especialidad
+import com.example.proyecto_citasmedicas_dam1.models.Medico
 
 class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
 
@@ -22,6 +24,9 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
     private lateinit var btnSaveCR: Button
     private lateinit var btnBackCR: Button
     private lateinit var btnCCita: Button
+
+    lateinit var datae:ArrayList<Especialidad>
+    lateinit var datam: ArrayList<Medico>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,14 +54,17 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
     override fun onClick(v: View?) {
         if (v == btnSaveCR){
 
-            var esp = spnEspCR.selectedItem.toString().toInt()
-            var med = spnMedCR.selectedItem.toString().toInt()
+           
             var pac = edtPacienteCR.text.toString().toInt()
             var fc = edtFechaCR.toString()
             var hh = edtHoraCR.toString()
             var des = edtDescCR.toString()
+            //obetner codigo de la Especialidad seleccionada
+            var codEsp=datae.get(spnEspCR.selectedItemPosition).id
+            //Get Id from Medico selected
+            var idMed = datam.get(spnMedCR.selectedItemPosition).cod
 
-            var bean = Cita(0, esp,med,pac,fc,hh,des)
+            var bean = Cita(0, codEsp,idMed,pac,fc,hh,des)
 
             var salida = ArregloCita().adicionar(bean)
 
@@ -82,11 +90,11 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
 
     fun muestraMedicos(){
 
-        val data = ArregloMedico().lista()
+        datam = ArregloMedico().lista()
 
         val medico = ArrayList<String>()
 
-        for(bean in data)
+        for(bean in datam)
             medico.add(bean.nombre)
 
         val adaptador = ArrayAdapter(this, android.R.layout.simple_list_item_1,medico)
@@ -98,11 +106,11 @@ class RegistrarCitaActivity : AppCompatActivity(),View.OnClickListener {
 
     fun muestraEspecialidades(){
 
-        val data = ArregloEspecialidad().lista()
+        datae = ArregloEspecialidad().lista()
 
         val especialidad = ArrayList<String>()
 
-        for(bean in data)
+        for(bean in datae)
             especialidad.add(bean.nombre)
 
         val adaptador = ArrayAdapter(this, android.R.layout.simple_list_item_1,especialidad)

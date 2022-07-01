@@ -11,7 +11,6 @@ class VistaEspecialidad(item: View): RecyclerView.ViewHolder(item) {
     var tvCodigoE: TextView
     var tvNombreE: TextView
     var tvDescE: TextView
-    var btnDetalle: Button
 
     //Block for init
     init {
@@ -20,6 +19,5 @@ class VistaEspecialidad(item: View): RecyclerView.ViewHolder(item) {
         tvCodigoE = itemView.findViewById(R.id.tvCodigoE)
         tvNombreE = itemView.findViewById(R.id.tvNombreE)
         tvDescE = itemView.findViewById(R.id.tvDescE)
-        btnDetalle = itemView.findViewById(R.id.btnDetalleE)
     }
 }
